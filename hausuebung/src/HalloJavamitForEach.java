@@ -4,6 +4,7 @@ import java.util.List;
 public class HalloJavamitForEach {
     ArrayList<String> stringList = new ArrayList<>();
 
+
     public void returnOldList(){
         for(String arrayList : stringList){
             System.out.println(arrayList);
