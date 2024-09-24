@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public interface printNewList {
+public interface printNewList<T> {
+    String param (T param);
 }
