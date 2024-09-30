@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class CalculationOperation {
+package PACKAGE_NAME;public interface CalculationOperation {
 }
