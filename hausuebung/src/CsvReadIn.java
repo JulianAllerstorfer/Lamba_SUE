@@ -1,32 +1,26 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CsvReadIn {
-    String fileName = "Tester.csv";
-    List<int[]> data = new ArrayList<>();
+    NumberTester numberTester = new NumberTester("Tester.csv");
+    public void readIn (String filename){
+        try(BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            int numTest = Integer.parseInt(reader.readLine());
+            for(int i = 0; i < numTest ; i++){
+                String line = reader.readLine();
+                String[] parts = line.split("\\s");
+                int type = Integer.parseInt(parts[0]);
+                int num = Integer.parseInt(parts[1]);
 
-
-    public void readIn(String fileName){
-        try(BufferedReader br = new BufferedReader(new FileReader(this.fileName))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                String[] werte = line.split("\\s+");
-                int[] lineData = new int[2];
-                lineData[0] = Integer.parseInt(werte[0]);
-                lineData[1] = Integer.parseInt(werte[1]);
-
-                data.add(lineData);
+                numberTester.testFile(type, num);
             }
-        } catch (IOException e) {
-            System.out.println("Fehler beim Lesen der Datei!");
-        }
-    }
 
-    public List<int[]> getData() {
-        return data;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

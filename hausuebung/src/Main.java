@@ -7,7 +7,11 @@ public class Main {
         halloJavamitForEach.returnOldList();
         halloJavamitForEach.returnNewList();
 
-        String filePath = "Tester.csv";
-        NumberTester numberTester = new NumberTester(filePath);
+        System.out.println(" ");
+
+        CsvReadIn csvReadIn = new CsvReadIn();
+        csvReadIn.readIn("Tester.csv");
+        NumberTester numberTester = new NumberTester("Tester.csv");
+        csvReadIn.readIn("Tester.csv");
     }
 }
