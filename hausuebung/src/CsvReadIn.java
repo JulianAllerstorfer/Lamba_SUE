@@ -8,8 +8,9 @@ public class CsvReadIn {
     String fileName = "Tester.csv";
     List<int[]> data = new ArrayList<>();
 
-    public void readIn(){
-        try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+
+    public void readIn(String fileName){
+        try(BufferedReader br = new BufferedReader(new FileReader(this.fileName))) {
             String line;
 
             while ((line = br.readLine()) != null) {
@@ -25,5 +26,7 @@ public class CsvReadIn {
         }
     }
 
-
+    public List<int[]> getData() {
+        return data;
+    }
 }

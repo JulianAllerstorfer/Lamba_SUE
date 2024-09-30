@@ -7,6 +7,7 @@ public class Main {
         halloJavamitForEach.returnOldList();
         halloJavamitForEach.returnNewList();
 
-
+        String filePath = "Tester.csv";
+        NumberTester numberTester = new NumberTester(filePath);
     }
 }
